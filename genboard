@@ -4,13 +4,23 @@ mode="mtx"
 row="5"
 col="5"
 
-while getopts "spr:c:" OPT
+usage() {
+  echo "Usage: $0 -r <row number> -c <column number> [-m|-s] [-h]"
+  echo "  -m - generate a matrix/perfboard pattern"
+  echo "  -s - generate a stripboard pattern"
+  echo "  -r - number of rows"
+  echo "  -c - number of columns"
+  echo "  -h - this message"
+}
+
+while getopts "spr:c:h" OPT
 do
   case $OPT in
     's') mode='strip';;
-    'p') mode='mtx';;
+    'm') mode='mtx';;
     'r') [[ "$OPTARG" =~ [1-9][0-9]* ]] && row=$OPTARG ;;
     'c') [[ "$OPTARG" =~ [1-9][0-9]* ]] && col=$OPTARG ;;
+    'h') usage; exit 0;
   esac
 done
 
