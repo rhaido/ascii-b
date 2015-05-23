@@ -14,10 +14,10 @@ confusion if not aware
 
 ### Examples
 
-$ ./reverse <boards/talking_electronics | ./colorboard
+    ./reverse <boards/talking_electronics | ./colorboard
 
 This command flips the boards from right to left and colors it
 
-$ tac <boards/talking_electronics | ./colorboard
+    tac <boards/talking_electronics | ./colorboard
 
 This command flips the boards from upside down and colors it
