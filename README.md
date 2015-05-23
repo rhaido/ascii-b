@@ -4,11 +4,11 @@ shell.
 
 ### Utilities
 
-- *genboard* - generate either a matrix/perfboard or a stripboard; execute with
-*-h* argument for a quick help
-- *reverse* - flip the board from right to left (like turning page); reads from
+- **genboard** - generate either a matrix/perfboard or a stripboard; execute with
+**-h** argument for a quick help
+- **reverse** - flip the board from right to left (like turning page); reads from
 stdin
-- *colorboard* - color the board, reads from stdin. *Remember* - this utility
+- **colorboard** - color the board, reads from stdin. **REMEMBER** - this utility
 adds colors, and colors are ASCII escape sequences, i.e. it might lead to
 confusion if not aware
 
