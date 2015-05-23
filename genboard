@@ -1,0 +1,103 @@
+#!/bin/bash
+
+mode="mtx"
+row="5"
+col="5"
+
+while getopts "spr:c:" OPT
+do
+  case $OPT in
+    's') mode='strip';;
+    'p') mode='mtx';;
+    'r') [[ "$OPTARG" =~ [1-9][0-9]* ]] && row=$OPTARG ;;
+    'c') [[ "$OPTARG" =~ [1-9][0-9]* ]] && col=$OPTARG ;;
+  esac
+done
+
+g_begend_line() {
+  c=0
+  line="+-"
+
+  while [[ $c -lt $col ]]
+  do
+    line="${line}--"
+    let c++
+  done
+
+  line="${line}+"
+
+  echo $line
+}
+
+g_mtx() {
+  local r=0
+
+  while [[ $r -lt $row ]]
+  do
+    c=0
+    line="| "
+
+    while [[ $c -lt $col ]]
+    do
+      line="${line}. "
+      let c++
+    done
+
+    line="${line} |"
+    echo $line
+
+    if [[ $(($r+1)) -lt $row ]]; then
+      len=$(($col*2))
+      printf '| %*s|\n' "$len"
+    fi
+
+    r=$(($r+1))
+  done
+}
+
+g_strip() {
+  local r=0
+
+  while [[ $r -lt $row ]]
+  do
+    c=0
+    line="| "
+
+    while [[ $c -lt $col ]]
+    do
+      [[ $c -lt $(($col-1)) ]] && \
+        line="${line}.=" || \
+        line="${line}."
+
+      let c++
+    done
+
+    line="${line} |"
+    echo $line
+
+    if [[ $(($r+1)) -lt $row ]]; then
+      len=$(($col*2))
+      printf '| %*s|\n' "$len"
+    fi
+
+    r=$(($r+1))
+  done
+}
+
+case "$mode" in
+  'mtx')
+    g_begend_line
+    g_mtx
+    g_begend_line
+    ;;
+  'strip')
+    g_begend_line
+    g_strip
+    g_begend_line
+    ;;
+  *)
+    g_begend_line
+    g_mtx
+    g_begend_line
+    ;;
+esac
