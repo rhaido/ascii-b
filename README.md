@@ -1,4 +1,4 @@
-## CITRONIX - Command-lIne ElecTRONics for UNIX
+## CITRONIX - "Command-line elecTRONics for UNIX"
 Set of tools for working with matrix boards/perfboards and stripboards in UNIX/Linux
 shell.
 
