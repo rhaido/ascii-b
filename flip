@@ -1,0 +1,37 @@
+#!/bin/bash
+
+IFS=
+
+function horiz_flip() {
+  while read -r line
+  do
+    if [[ "$line" =~ ^\|.* ]]; then
+      echo $line | \
+        sed -e 's,\\,{,g' -e 's,/,},g' | \
+        sed -e 's,{,/,g' -e 's,},\\,g' | \
+        rev
+    else
+      echo $line
+    fi
+  done
+}
+
+function vert_flip() {
+  tac | \
+  sed -e 's,\\,{,g' -e 's,/,},g' | \
+  sed -e 's,{,/,g' -e 's,},\\,g'
+}
+
+if [[ "$#" -eq 0 ]]; then
+  vert_flip
+else
+  while getopts "hv" OPT
+  do
+    case $OPT in
+      'h') horiz_flip ;;
+      'v') vert_flip ;;
+      'h') usage; exit 0;;
+    esac
+  done
+fi
+

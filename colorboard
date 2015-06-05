@@ -82,9 +82,9 @@ do
       | sed -e 's,^|,{,g' -e 's,|$,},g' \
       | sed \
       -e "s,[o*],${green}&${color_off},g" \
-      -e "s,=,${ired}&${color_off},g" \
+      -e "s,[v:],${ired}&${color_off},g" \
       -e "s,[\\/|-],${blue}&${color_off},g" \
-      -e "s,[+v],${purple}&${color_off},g" \
+      -e "s,[+],${purple}&${color_off},g" \
       -e 's,^{,|,g' \
       -e 's,}$,|,g'
   else

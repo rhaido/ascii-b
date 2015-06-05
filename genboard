@@ -13,14 +13,14 @@ usage() {
   echo "  -h - this message"
 }
 
-while getopts "spr:c:h" OPT
+while getopts "smr:c:h" OPT
 do
   case $OPT in
     's') mode='strip';;
     'm') mode='mtx';;
     'r') [[ "$OPTARG" =~ [1-9][0-9]* ]] && row=$OPTARG ;;
     'c') [[ "$OPTARG" =~ [1-9][0-9]* ]] && col=$OPTARG ;;
-    'h') usage; exit 0;
+    'h') usage; exit 0;;
   esac
 done
 
