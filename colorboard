@@ -81,7 +81,7 @@ do
     echo $line \
       | sed -e 's,^|,{,g' -e 's,|$,},g' \
       | sed \
-      -e "s,[o*],${green}&${color_off},g" \
+      -e "s,[cbesgd@o*],${green}&${color_off},g" \
       -e "s,[v:],${ired}&${color_off},g" \
       -e "s,[\\/|-],${blue}&${color_off},g" \
       -e "s,[+],${purple}&${color_off},g" \
