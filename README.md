@@ -24,6 +24,7 @@ This command flips the boards from upside down and colors it
 
 ### Conventions and signs
 The following signs are employed:
+
     [-|\/] - wire point-to-point connections
     . - marking non-soldered copper pad/hole
     o - soldered copper pad
