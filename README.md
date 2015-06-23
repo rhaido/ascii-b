@@ -1,4 +1,4 @@
-## CITRONIX - "Command-line elecTRONics for UNIX"
+## CiTRONIX - "Command-line elecTRONics for UNIX"
 Set of tools for working with matrix boards/perfboards and stripboards in UNIX/Linux
 shell.
 
@@ -21,3 +21,16 @@ This command flips the boards from right to left and colors it
     tac <boards/talking_electronics | ./colorboard
 
 This command flips the boards from upside down and colors it
+
+### Conventions and signs
+The following signs are employed:
+    [-|\/] - wire point-to-point connections
+    . - marking non-soldered copper pad/hole
+    o - soldered copper pad
+    * - several wires soldered, not necesseraly copper pad
+    # - component space
+    @ - soldered positive lead of anything/anode
+    & - wire connection is routed under component
+    " - wire connection is under component AND component is placed from down right corner to upper left corner
+    [cbegsd] - collertor, base, emmiter, gate, source, drain
+    : - track is cut here (for stripboard)
