@@ -33,5 +33,5 @@ The following signs are employed:
     @ - soldered positive lead of anything/anode
     & - wire connection is routed under component
     " - wire connection is under component AND component is placed from down right corner to upper left corner
-    [cbegsd] - collertor, base, emmiter, gate, source, drain
-    : - track is cut here (for stripboard)
+    [cbegsd] - collector, base, emitter, gate, source, drain
+    : - copper strip/pad is cut/drilled out here
