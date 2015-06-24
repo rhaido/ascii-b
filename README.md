@@ -22,16 +22,20 @@ This command flips the boards from right to left and colors it
 
 This command flips the boards from upside down and colors it
 
-### Conventions and signs
+### Control signs
 The following signs are employed:
 
     [-|\/] - wire point-to-point connections
-    . - marking non-soldered copper pad/hole
-    o - soldered copper pad
-    * - several wires soldered, not necesseraly copper pad
+    . - non-soldered copper pad/strip hole; stip is continious in this place
+    o - soldered copper pad with component lead
+    * - several connectiion wires soldered without component lead
     # - component space
     @ - soldered positive lead of anything/anode
     & - wire connection is routed under component
     " - wire connection is under component AND component is placed from down right corner to upper left corner
     [cbegsd] - collector, base, emitter, gate, source, drain
     : - copper strip/pad is cut/drilled out here
+    [vL] - power rail and common wire, usually connector pin
+    [<>] - input/output pins
+    = - sector of continiou s copper strip
+
