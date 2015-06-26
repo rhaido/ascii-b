@@ -85,13 +85,12 @@ do
       -e "s,[@cbesdg],${igreen}&${color_off},g" \
       -e "s,[+&\\/|-],${blue}&${color_off},g" \
       -e "s,[+],${purple}&${color_off},g" \
-      -e "s,[:],${ired}&${color_off},g" \
-      -e "s,[vL],${icyan}&${color_off},g" \
-      -e "s,[><],${cyan}&${color_off},g" \
+      -e "s,[:],${red}&${color_off},g" \
+      -e "s,[VvL],${bired}&${color_off},g" \
+      -e "s,[><],${bicyan}&${color_off},g" \
       -e 's,^{,|,g' \
       -e 's,}$,|,g'
   else
     echo $line
   fi
 done
-
