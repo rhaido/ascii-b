@@ -1,6 +1,6 @@
 ## CiTRONIX - "Command-line elecTRONics for UNIX"
 Set of tools for working with matrix boards/perfboards and stripboards in UNIX/Linux
-shell.
+shell. Put the fun back :D
 
 ### Utilities
 
@@ -81,7 +81,7 @@ Another example:
 
     o#+-@
 
-In reality, it is a diode, with the connecting wire going right under and along
+In reality, it was a diode, with the connecting wire going right under and along
 the component, thus making impossible to use hashes. Happily, there is nothing
-around to confuse us, and it's actually possible to guess, how the component should
+around to confuse us, and it's relatively easy to "decrypt", how the component should
 be placed. In more difficult situations the **&** or **"** should be added.
