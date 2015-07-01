@@ -49,7 +49,7 @@ The following signs are employed:
     @ - soldered positive lead of anything/anode
     " - wire connection is under component AND component is placed from upper left corner to down right corner
     c b e g s d - collector, base, emitter, gate, source, drain
-d    : - copper strip/pad is cut/drilled out here
+    : - copper strip/pad is cut/drilled out here
     V v T - Positive power rail, negative power rail and common wire, usually soldered as connector pin
     < > - input/output pins
     j - jumper connection
