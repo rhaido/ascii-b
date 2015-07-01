@@ -1,6 +1,10 @@
-## CiTRONIX - "Command-line elecTRONics for UNIX"
+## ASCii-PCB
 Set of tools for working with matrix boards/perfboards and stripboards in UNIX/Linux
 shell. Put the fun back :D
+
+### Motivation
+At a certain moment I found, that I needed a method to automatically flip /
+mirror boards I was drawing in my sketchbook - thus, this project was born :)
 
 ### Utilities
 
@@ -27,7 +31,7 @@ And this command get an advantage from UNIX pipes and does flipping + mirroring:
 
 Simple!
 
-### Rules of Drawing the Boards using CiTRONIX
+### Rules of Drawing the Boards
 Actually, there is only one rule to follow - you can draw your matrix/strip boards
 in any way, but keep them as understandable as possible.
 
