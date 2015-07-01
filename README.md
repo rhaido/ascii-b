@@ -13,14 +13,19 @@ adds colors, and colors are ASCII escape sequences, i.e. it might lead to
 confusion if not aware
 
 ### Examples of Usage
+This command flips the boards upside down and colors it
 
-    ./reverse <boards/talking_electronics | ./colorboard
+    ./flip <boards/talking_electronics | ./colorboard
 
-This command flips the boards from right to left and colors it
+The following command flips the boards from right to left (like turning the page of a book) and colors it
 
-    tac <boards/talking_electronics | ./colorboard
+    flip -h <boards/talking_electronics | ./colorboard
 
-This command flips the boards from upside down and colors it
+And this command get an advantage from UNIX pipes and does flipping + mirroring:
+
+    ./flip -h <boards/monostable.cx | ./flip  
+
+Simple!
 
 ### Rules of Drawing the Boards using CiTRONIX
 Actually, there is only one rule to follow - you can draw your matrix boards in
