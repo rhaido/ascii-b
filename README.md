@@ -28,47 +28,50 @@ And this command get an advantage from UNIX pipes and does flipping + mirroring:
 Simple!
 
 ### Rules of Drawing the Boards using CiTRONIX
-Actually, there is only one rule to follow - you can draw your matrix boards in
-any way you wantt, but keep them as understandable as possible.
+Actually, there is only one rule to follow - you can draw your matrix/strip boards
+in any way, but keep them as understandable as possible.
 
 ### Type & Size of the Moards
-Matrix/Perfboards & stripboards the the supported types. Evidently, all routing
+Matrix/Perfboards & stripboards are the only supported types. Evidently, all routing
 should be done on the backside, preferrably without jumpers. Personally, I try
-to avoid jumpers at all costs, but sometimes it's impossible, thus symbol **j**
-was introduced.
+to avoid jumpers at all costs, but sometimes it just impossible to provide a compact
+layout without them, thus symbol **j** was introduced.
 
 ### Control signs
 The following signs are employed:
 
     - | \ / - wire point-to-point connections
-    . - non-soldered copper pad/strip hole; stip is continious in this place
-    o - soldered copper pad with component lead; might be the IC leg either
-    * - several connectiion wires soldered without component lead
+    . - non-soldered copper pad/strip hole; stip is continuous in this place
+    o - soldered copper pad with a component lead; might be an IC leg
+    * - several connection wires soldered without component lead
     # - component space
     & - # + wire connection is routed under component
     @ - soldered positive lead of anything/anode
     " - wire connection is under component AND component is placed from upper left corner to down right corner
     c b e g s d - collector, base, emitter, gate, source, drain
-    : - copper strip/pad is cut/drilled out here
+d    : - copper strip/pad is cut/drilled out here
     V v T - Positive power rail, negative power rail and common wire, usually soldered as connector pin
     < > - input/output pins
     j - jumper connection
-    = - continious copper strip
+    = - continuous copper strip
 
 ### Boundaries of the Components
-Usually, boundaries and direction - thus placement - of the component are recognised by placing
-hashes **#** between solderable terminals. Some components. like opamps, or cermet pots, can be
-also outline by hashes - if it's clearly marked, than normal wiring symbols can be used inside
-hashed region to depict the wiring under conmponent nicely and correctly.
+Usually, boundaries and direction - thus placement - of a component are recognised by placing
+hashes **#** between solderable terminals. Some components, like opamps, or cermet pots, can be
+also outlined by hashes; if the boundaries are clearly marked, than normal wiring symbols can be used inside
+hashed region to depict a wiring under component nicely and correctly.
 
-For example:
+For example, here is a cermet 3-teminal pot with 2 leads soldered together:
 
-    #####
-    o . o
+      |
+    ##&##
+    o +-o-
     #  /#
     ##o##
+      |
 
-This art shows the placement of component, and that actually two out of its three pins are short-circuited. If connecting wire crosses the border of the component without solder joint, is't better to use **&**.
+This art shows the placement of component, and that two out of its three pins are soldered together.
+If connecting wire crosses the border of the component without solder joint, is't better to use **&**.
 
 ### Not-so-easy Cases
 If the connecting wire goes under component, usually it's enough to use **&**. However,
@@ -89,4 +92,4 @@ Another example:
 In reality, it was a diode, with the connecting wire going right under and along
 the component, thus making impossible to use hashes. Happily, there is nothing
 around to confuse us, and it's relatively easy to "decrypt", how the component should
-be placed. In more difficult situations the **&** or **"** should be added.
+be placed. In more difficult situations the **&** or **"** symbols should be added.
