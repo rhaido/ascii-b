@@ -45,7 +45,7 @@ The following signs are employed:
     " - wire connection is under component AND component is placed from upper left corner to down right corner
     c b e g s d - collector, base, emitter, gate, source, drain
     : - copper strip/pad is cut/drilled out here
-    V v L - Positive power rail, negative power rail and common wire, usually connector pin; sometimes v = L
+    V v T - Positive power rail, negative power rail and common wire, usually soldered as connector pin
     < > - input/output pins
     j - jumper connection
     = - continious copper strip

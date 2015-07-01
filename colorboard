@@ -86,7 +86,7 @@ do
       -e "s,[+&\\/|-],${blue}&${color_off},g" \
       -e "s,[+],${purple}&${color_off},g" \
       -e "s,[:],${red}&${color_off},g" \
-      -e "s,[VvL],${bired}&${color_off},g" \
+      -e "s,[VvT],${bired}&${color_off},g" \
       -e "s,[><],${bicyan}&${color_off},g" \
       -e 's,^{,|,g' \
       -e 's,}$,|,g'
