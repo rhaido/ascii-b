@@ -19,7 +19,7 @@ This command flips the boards upside down and colors it
 
 The following command flips the boards from right to left (like turning the page of a book) and colors it
 
-    flip -h <boards/talking_electronics | ./colorboard
+    ./flip -h <boards/talking_electronics | ./colorboard
 
 And this command get an advantage from UNIX pipes and does flipping + mirroring:
 
