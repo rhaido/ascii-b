@@ -1,6 +1,8 @@
-## ASCii-PCB
-Set of tools for working with matrix boards/perfboards and stripboards in UNIX/Linux
-shell. Put the fun back :D
+## ASCii-B
+Set of tools for working with matrix/perf/strip Boards in UNIX/Linux console
+environment.
+
+Put the fun back :D
 
 ### Motivation
 At a certain moment I found, that I needed a method to automatically flip /
