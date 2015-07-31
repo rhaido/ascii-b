@@ -22,13 +22,22 @@ function vert_flip() {
   sed -e 's,{,/,g' -e 's,},\\,g'
 }
 
+function usage() {
+cat <<EOF
+$0 [ -t | -v | -h ]
+  -h - this message
+  -t - flip board horizontally, right-to-left, like turing over the page
+  -v - flip board upside down
+EOF
+}
+
 if [[ "$#" -eq 0 ]]; then
   vert_flip
 else
-  while getopts "hv" OPT
+  while getopts "tvh" OPT
   do
     case $OPT in
-      'h') horiz_flip ;;
+      't') horiz_flip ;;
       'v') vert_flip ;;
       'h') usage; exit 0;;
     esac
