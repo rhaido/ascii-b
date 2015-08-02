@@ -38,7 +38,7 @@
                              ZZ
                             Z
 
-unknown
+source: http://www.retrojunkie.com/asciiart/animals/bees.htm
 ```
 
 
