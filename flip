@@ -7,8 +7,12 @@ function horiz_flip() {
   do
     if [[ "$line" =~ ^\|.* ]]; then
       echo $line | \
-        sed -e 's,\\,{,g' -e 's,/,},g' | \
-        sed -e 's,{,/,g' -e 's,},\\,g' | \
+        sed -e 's,\\,{,g' \
+            -e 's,/,\\,g' \
+            -e 's,{,/,g' \
+            -e 's,%,(,g' \
+            -e 's,\&,%,g' \
+            -e 's,(,\&,g' | \
         rev
     else
       echo $line
