@@ -11,12 +11,15 @@ mirror boards I was drawing in my sketchbook - thus, this project was born :)
 ### Utilities
 
 - **genboard** - generate either a matrix/perfboard or a stripboard; execute with
-**-h** argument for a quick help
-- **reverse** - flip the board from right to left (like turning page); reads from
-standard input
+  **-h** argument for a quick help
+- **flip** - flip the board from right to left (like turning page) or upside
+  down; reads from standard input
 - **colorboard** - color the board, reads from standard input. **REMEMBER** - this utility
-adds colors, and colors are ASCII escape sequences, i.e. it might lead to
-confusion if not aware
+  adds colors, and colors are ASCII escape sequences, i.e. it might lead to
+  confusion if not aware
+- **wiring** - show only soldering points and wiring between them
+- **soldepads** - show only soldered pads and mark pads, which can be drilled
+  off with ':'
 
 ### Examples of Usage
 This command flips the boards upside down and colors it
@@ -33,7 +36,7 @@ And this command get an advantage from UNIX pipes and does flipping + mirroring:
 
 Show only solder points and wiring between the points:
 
-    sed -e "s/#/ /g" -e "s/\^/o/g" -e "s/[VT><]/o/g" -e "s/&/\\\/g" -e "s/%/\//g" -e "s/l/|/g" -e "s/~/-/g" astable.cx | ../flip -t | ../colorboard
+    ./wiring < boards/astable.cx | ../flip -t | ../colorboard
 
 Simple!
 
