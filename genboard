@@ -73,6 +73,7 @@ g_strip() {
     c=0
     line="| "
 
+    # Generate dotted string
     while [[ $c -lt $col ]]
     do
       [[ $c -lt $(($col-1)) ]] && \
@@ -85,6 +86,7 @@ g_strip() {
     line="${line} |"
     echo $line
 
+    # Generate Empty string after the dotted string
     if [[ $(($r+1)) -lt $row ]]; then
       len=$(($col*2))
       printf '| %*s|\n' "$len"
