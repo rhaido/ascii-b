@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ -f $1 ]]; then
+  fname=$(echo ${1##*/} | sed 's/.cx//g')
+  (cat boardPaper-header.tex; ../wiring < $1 | ./cx2tex ; cat boardPaper-footer.tex) >${fname}.tex
+  latex ${fname}.tex
+  dvipdf ${fname}.dvi ${fname}.pdf
+
+  rm ${fname}.{aux,log,dvi}
+fi

@@ -1,0 +1,55 @@
+% Document encoding: ISO 8859-1
+\documentclass[a4paper]{article}
+
+\usepackage[landscape,margin=5mm]{geometry}
+\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usepackage{ifthen}
+
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage{color}
+
+% CONFIGURE THE BOARD
+
+% strength of the drawn lines in percent (0: white, 50: medium gray, 100: black)
+\def\strength{30}
+
+% grid and PCB size
+\pgfmathsetmacro{\raster}{4mm}
+\pgfmathsetmacro{\pcbLength}{280mm}
+\pgfmathsetmacro{\pcbWidth}{150mm}
+
+% do you want stripboard or perfboard?
+\newboolean{strips}
+\setboolean{strips}{false} % set to false for perfboard
+
+% radius of the pads
+\def\padRadius{1mm}
+
+\def\solderPadColor{red}
+
+% don't edit the following unless you know what you're doing
+\pgfmathsetmacro{\nx}{floor(\pcbLength/\raster) - 1}
+\pgfmathsetmacro{\ny}{floor(\pcbWidth/\raster) - 1}
+
+\pgfmathsetmacro{\startX}{(\pcbLength - \nx * \raster)/2 + 3}
+\pgfmathsetmacro{\startY}{(\pcbWidth + \ny * \raster)/2}
+\pgfmathsetmacro{\endX}{\pcbLength - \startX}
+
+\begin{document}
+  \pagenumbering{gobble}% Remove page numbers (and reset to 1)
+  \clearpage
+
+  \begin{itemize}
+    \item Mark out the Vs and V0 power lines first, then place the ICs
+    \item Remember to cuth the track between the pins of an IC. Mark the cuts on the diagram with X
+    \item Positioned flat resistors usually require a gap of 4 holes, axial capacitors - a gap og 8 holes.
+    \item Number of pins of the ICs as shown
+  \end{itemize}
+
+  %\centering
+  \begin{tikzpicture}[framed]
+    \begin{scope}[thick, black!\strength]
