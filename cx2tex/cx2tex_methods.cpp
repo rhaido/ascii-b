@@ -117,7 +117,7 @@ int cx_board::translate (void) {
               break;
 
             case '-':
-              if (i % 2 == 0) 
+              if (i % 2 == 0)
                 cout << "  \\pgfmathsetmacro{\\px}{\\startX + \\col*\\raster}\n"
                      << "  \\fill[white] (\\px pt, \\py pt) circle(\\padRadius);\n"
                      << "  \\draw[lightgray] (\\px pt, \\py pt) circle(\\padRadius);\n";
@@ -127,6 +127,11 @@ int cx_board::translate (void) {
               break;
 
             case '|':
+              if (!(i & 1) && !(nlines & 1))
+                cout << "  \\pgfmathsetmacro{\\px}{\\startX + \\col*\\raster}\n"
+                     << "  \\fill[white] (\\px pt, \\py pt) circle(\\padRadius);\n"
+                     << "  \\draw[lightgray] (\\px pt, \\py pt) circle(\\padRadius);\n";
+
               cout << "  \\pgfmathsetmacro{\\px}{\\startX + \\col*\\raster}\n"
                    << "  \\pgfmathsetmacro{\\dpy}{\\py - 8pt }\n"
                    << "  \\pgfmathsetmacro{\\upy}{\\py + 8pt }\n"
@@ -134,6 +139,10 @@ int cx_board::translate (void) {
               break;
 
             case '/':
+              if (!(i & 1) && !(nlines & 1))
+                cout << "  \\pgfmathsetmacro{\\px}{\\startX + \\col*\\raster}\n"
+                     << "  \\fill[white] (\\px pt, \\py pt) circle(\\padRadius);\n"
+                     << "  \\draw[lightgray] (\\px pt, \\py pt) circle(\\padRadius);\n";
               cout << "  \\pgfmathsetmacro{\\lpx}{\\startX + \\col*\\raster - 9 pt}\n"
                    << "  \\pgfmathsetmacro{\\dpy}{\\py - 9pt }\n"
                    << "  \\pgfmathsetmacro{\\rpx}{\\startX + \\col*\\raster + 9 pt}\n"
@@ -142,6 +151,10 @@ int cx_board::translate (void) {
               break;
 
             case '\\':
+              if (!(i & 1) && !(nlines & 1))
+                cout << "  \\pgfmathsetmacro{\\px}{\\startX + \\col*\\raster}\n"
+                     << "  \\fill[white] (\\px pt, \\py pt) circle(\\padRadius);\n"
+                     << "  \\draw[lightgray] (\\px pt, \\py pt) circle(\\padRadius);\n";
               cout << "  \\pgfmathsetmacro{\\lpx}{\\startX + \\col*\\raster - 9 pt}\n"
                    << "  \\pgfmathsetmacro{\\dpy}{\\py - 9pt }\n"
                    << "  \\pgfmathsetmacro{\\rpx}{\\startX + \\col*\\raster + 9 pt}\n"
