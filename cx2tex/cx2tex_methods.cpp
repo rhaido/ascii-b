@@ -11,7 +11,7 @@ cx_board::cx_board() {
   rows = 0;
   cols = 0;
   fread = false;
-//  in = NULL;
+  in = NULL;
 }
 
 cx_board::cx_board (char *fname) {
@@ -26,12 +26,11 @@ cx_board::cx_board (char *fname) {
 cx_board::~cx_board() {
   int i = 0;
 
-  if (!board) return;
-
-  for(i = 0; i < rows; i++) {
-    if (board[i] != NULL)
-      delete [] board[i];
-  }
+  if (board)
+    for(i = 0; i < rows; i++) {
+      if (board[i] != NULL)
+        delete [] board[i];
+    }
 
   if (fread) {
     ((ifstream *)in)->close();
@@ -43,8 +42,10 @@ int cx_board::open (char *fname) {
   if (fname) {
     ifstream *cx_file = new ifstream(fname, ios::in);
    
-    if (!cx_file->is_open())
+    if (!cx_file->is_open()) {
+      cerr << "Error while opening a file " << fname << " -- exit!";
       return -1;
+    }
 
     in = cx_file;
     fread = true;
@@ -59,13 +60,27 @@ int cx_board::translate (void) {
   int i = 0,
       nlines = 0;
 
+  bool begin = false;
+  bool end = false;
+
   if (!in) return -1;
 
   while (getline (*in, line)) {
     if (!cols)
       cols = line.length() - 4;
 
-    if (line[0] == '+') continue;
+    if (line[0] == '+') {
+      if (!begin) {
+        begin = true;
+        cout << "\\begin{tikzpicture}[framed]\n"
+             << "\\begin{scope}[thick, black!\\strength]\n";
+      } else {
+        begin = false;
+        cout << "\\end{scope}\n"
+            <<  "\\end{tikzpicture}\n";
+      }
+      continue;
+    }
 
     if (line[0] == '|') {
       cout << "\\def \\row {" << nlines << "}\n";

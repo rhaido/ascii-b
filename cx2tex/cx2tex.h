@@ -13,8 +13,6 @@ enum elements {
   WIRE_PLUS
 };
 
-enum read_mode { STDIN, F };
-
 class cx_board {
   public:
     cx_board ();
