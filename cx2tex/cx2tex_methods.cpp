@@ -124,7 +124,13 @@ int cx_board::translate (void) {
                    << line[i] << "$};\n";
               break;
 
-            case '+': case 'V': case 'T': case '<': case '>':
+            case '+':
+              cout << "  \\pgfmathsetmacro{\\px}{\\startX + \\col*\\raster}\n"
+                   << "  \\fill[white] (\\px pt, \\py pt) circle(\\padRadius);\n"
+                   << "  \\draw[brown] (\\px pt, \\py pt) circle(\\padRadius);\n";
+              break;
+
+            case 'V': case 'T': case '<': case '>':
               cout << "  \\pgfmathsetmacro{\\px}{\\startX + \\col*\\raster}\n"
                    << "  \\fill[white] (\\px pt, \\py pt) circle(\\padRadius);\n"
                    << "  \\draw[brown] (\\px pt, \\py pt) circle(\\padRadius) node[violet, scale=0.5] {$"
